@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 변수와 범위</title>
+	<script>
+// 1. 글로벌 변수와 지역 변수
+/*let scope = "글로벌 변수";
+function getValue(){
+	let scope = "지역변수";
+	return scope;
+}
+document.write("1> " + getValue() + "<br>");
+document.write("2> " + scope + "<br>");*/
+
+// 2. let 생략 가능 > 글로벌 변수
+scope = "글로벌 변수";
+function getValue(){
+	document.write("0> " + scope + "<br>");
+	var scope = "지역변수";
+	test = "테스트";
+	return scope;
+}
+document.write("1> " + getValue() + "<br>");
+document.write("2> " + scope + "<br>");
+document.write("3> " + test + "<br>");
+// 3. var 지역변수 - 함수블록에 유효
+// let 지역변수 - 블록에 유효
+if (true) {
+	let i = 100;
+}
+document.write("i>" + i);
+
+for (let i = 0; i < 3; i++) {
+
+}
+document.write("j>" + i);
+
+	</script>
+</head>
+
+<body>
+
+  
+ </body>
+</html>

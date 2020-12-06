@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        // 함수도 자료형이다 (리터럴)
+        // 함수도 인자가 된다, 함수도 리턴값이 된다
+        function add_maker(a) {
+            return function (b) {
+                return a+b;
+            }
+        }
+
+        let add10 = add_maker(10);
+        document.writeln(add10);
+        document.writeln("<br>");
+        document.writeln(add10(20));
+        document.writeln("<br>");
+        document.writeln(add_maker(30)(20));
+
+        //
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

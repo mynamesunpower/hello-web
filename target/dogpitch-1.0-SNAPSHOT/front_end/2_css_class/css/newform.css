@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+form {
+    text-align: center;
+    background-color: #012626;
+    width: 360px;
+    height: 550px;
+    border-radius: 10px;
+}
+
+fieldset {
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    margin-left: 16px;
+    margin-bottom: 5px;
+    background-color: #048C73;
+}
+
+fieldset:first-of-type{
+    margin-top: 2px;   
+}
+
+fieldset:nth-of-type(3){
+    margin-bottom: 10px;
+}
+
+legend {
+    color: #CCFFCC;
+    text-align: center;
+    font-family: "S-core Dream 5";
+    font-size: 14px;
+    padding-top: 2px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #027367;
+}
+
+#login {
+    width: 100px;
+}
+
+#info {
+    width: 80px;
+}
+
+#coding {
+    width: 170px;
+}
+
+#loginpanel {
+    color: #A0D9BE;
+    padding-left: 19px;
+    line-height: 35px;
+}
+
+#infopanel {
+    color: #A0D9BE;
+    padding-left: 40px;
+    line-height: 35px;
+}
+
+tr td:nth-of-type(2n+1) {
+    font-family: "S-Core Dream 3";
+    font-size: 12px;
+    text-align: right;
+    padding-top: 3px;
+}
+
+.button {
+    margin-top: 5px;
+    border: none;
+    background-color: bisque;
+    width: 60px;
+    height: 25px;
+}
+
+input {
+    width: 120px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 30%;
+    background: transparent;
+    border-style: inset;
+    border-color: #CCFFCC;
+    background-color: aliceblue;
+}
+
+.button {
+    font-size: 12px;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-style: dashed;
+    border-color: ;
+    color: #CCFFCC;
+    font-family: "S-Core Dream 4";
+    border-radius: 4px;
+}
+
+.button:first-of-type {
+    margin-right: 10px;
+}
+
+
+#id2 {
+    position: relative;
+    width: 50%;
+}
+
+#id {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid blue;
+    box-shadow: none !important;
+}
+
+.label {
+    position: absolute;
+    pointer-events: none;
+    top: 42px;
+    left: 140px;
+    font-size: 12px;
+    color: lightgray;
+    transition: 0.2s ease all;
+}
+
+#id2 input:focus~.label,
+#id2 input:not(:focus):valid~.label {
+    top: 0px;
+    left: 10px;
+    font-size: 10px;
+    opacity: 1;
+}

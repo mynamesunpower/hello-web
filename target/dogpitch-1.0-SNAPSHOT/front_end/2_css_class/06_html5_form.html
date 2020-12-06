@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link href="css/newform.css" rel="stylesheet" type="text/css"/>    
+    
+</head>
+    
+<body> 
+    <form>
+        <fieldset class="field">
+            <legend id="login">로그인 정보</legend>
+            <table id="loginpanel">
+                <tr id="id2">
+                    <td><label for="id">아이디</label></td>
+                    <td><input type="text" id="id" name="id"><label class="label" id="letsgo" for="id">아이디를 입력하시죠?</label></td>
+                </tr>
+                <tr>
+                    <td><label for="pw">비밀번호</label></td>
+                    <td><input type="password" id="pw" name="pw"></td>
+                </tr>
+                <tr>
+                    <td><label for="pwConfirm">비밀번호 확인</label></td>
+                    <td><input type="password" id="pwConfirm" name="pwConfirm"></td>
+                </tr>
+                    <td><label for="grade">회원 등급</label></td>
+                    <td><input type="text" id="grade" name="grade" value="준회원"></td>
+            </table>
+        </fieldset>
+        <fieldset class="field">
+            <legend id="info">개인 정보</legend>
+            <table id="infopanel">
+                <tr>
+                    <td><label for="name">이름</label></td>
+                    <td><input type="text" id="name" name="name" placeholder="5자미만 공백없이"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">메일 주소</label></td>
+                    <td><input type="email" id="email" name="email" placeholder="abcd@domain.com"></td>
+                </tr>
+                <tr>
+                    <td><label for="tel">연락처</label></td>
+                    <td><input type="text" id="tel" name="tel"></td>
+                </tr>
+                    <td><label id="birthday" for="birthday">생일</label></td>
+                    <td><input type="date" id="birthday" name="birthday"></td>
+            </table>
+        </fieldset>
+        <fieldset class="field">
+            <legend id="coding">코딩 숙련도(상, 중, 하)</legend>
+                <input type="range"/>
+        </fieldset>
+        <fieldset class="field">
+            <input class="button" type="submit" value="제출" name="submit"/>
+            <input class="button" type="reset" value="취소" />
+        </fieldset>
+    </form>
+</body>
+
+</html>

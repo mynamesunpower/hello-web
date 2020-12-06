@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('#get_time').click(function () {
+		$.ajax({
+			url : './jsp/time.jsp',
+			success : function (data) {
+				$('#result').text(data);
+			}
+		});
+	});
+
+	$('#melon').click(function () {
+		$.ajax({
+			url : './jsp/proxy_melon.jsp',
+			success : function (data) {
+				$('#result').empty();
+				let songchart = $('.typeRealtime > ul > li', data);
+				songchart.each(function () {
+					let title = $('.song', this).text();
+					let singer = $('.artist > .ellipsis > a', this).html();
+					$('#result').append(title + "-->" + singer + "<br/>");
+				})
+			}
+		});
+	});
+
+	$('#zum').click(function () {
+		$.ajax({
+			url : './jsp/proxy_zum.jsp',
+			success : function (data) {
+				$('#result').empty();
+				let chart = $('.list_body > ul:first-of-type > li', data);
+				chart.each(function () {
+					let number = $('.r_num', this).text();
+					let word = $('.')
+				});
+			}
+		});
+	});
+
+	$('#kma').click(function () {
+		$.ajax({
+			url : './jsp/proxy_kma.jsp',
+			dataType : 'xml',
+			success : function (content) {
+				// category 값을 추출해서 alert으로 메시지창
+				//let cate = $(content).find('category').text();
+				//let cate = $('category', content).text();
+				let timeData = $('data', content); // 이게 여러개일수있자나
+				timeData.each(function () { // 그렇기에 each함수로 각각 뽑자
+					$('#result').append("시간: " + $(this).find('hour').text() + " "
+					+ "온도: " + $(this).find('temp').text() + " 날씨:" + $(this).find('wfKor').text() + "<br/>");
+				});
+			}
+		});
+	});
+})
+</script>
+</head>
+<body>
+	<h1>선택</h1>
+	<button id="get_time">시간</button>
+	<button id="zum">줌</button>
+	<button id="melon">멜론</button>
+	<button id="kma">날씨</button>
+	<div id="result"></div>
+</body>
+</html>

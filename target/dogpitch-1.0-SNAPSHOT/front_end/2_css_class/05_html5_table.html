@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title> 기본 타이틀 </title>
+    
+    <style type="text/css">
+        
+        table {
+            border: 1px solid green;
+            border-collapse: collapse;
+        }
+        
+        #colname > th { 
+            width: 150px;
+            height: 100px;
+            padding: 5px;
+            background-color: darkgray;
+            color: yellow;
+            text-align: center;
+        }
+        
+        tr:hover {
+            background-color: olive;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: aliceblue;
+        } /* 홀수: odd, 짝수: even */
+    </style>
+    
+    </head>
+    
+    <!-- 절대 경로, 상대 경로
+        절대 경로는 : "/" 시작
+        상대 경로는 : "./" 자기 폴더
+                    "../" 부모 폴더 -->
+    
+    <body>
+    
+    <table border="1">
+
+        <tr id = colname>
+            <th colspan="2">부서명</th><th>전화번호 (02+)</th><th>팩스번호 (+02)</th>
+        </tr>
+        <tr>
+            <td colspan="2">종합상황실</td><td>123-1001~1005</td><td>321-1001</td>
+        </tr>
+        <tr>
+            <td rowspan="3">비서실</td><td>비서실장</td><td>123-1111</td><td rowspan="3">321-1002(사장)<br>321-1003(감사)</td>
+        </tr>
+        <tr>
+            <td rowspan="2">비서실</td><td rowspan="2">121-1112(사장)<br>123-1113(감사)</td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+            <td rowspan="3">홍보실</td><td>홍보실장</td><td>123-1001</td><td rowspan="3">321-1101</td>
+        </tr>
+        <tr>
+            <td>홍보부</td><td>123-2001~123-2009</td>
+        </tr>
+        <tr>
+            <td>국제협력부</td><td>123-1230~1234</td>
+        </tr>
+        
+        </table>
+    
+    
+    
+    </body>
+</html>

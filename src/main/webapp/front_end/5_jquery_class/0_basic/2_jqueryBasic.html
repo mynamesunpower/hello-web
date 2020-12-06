@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<title> 첫 연습 </title>
+	<style type="text/css">
+		.active {
+			border: 3px solid red;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(()=>{
+
+		$('.man').css('background-color', 'pink');
+		$('.woman').css('background-color', 'aliceblue');
+		$('.inputText').focus(function(){
+			$(this).addClass('active');
+		});
+
+		$('.inputText').blur(function(){
+			$(this).removeClass('active');
+		});
+
+		// 3
+		$('#divText').text('<img src="images/grim.jpg">');
+		$('#divHtml').html('<img src="images/grim.jpg">');
+		$('#divEmpty').empty();
+
+		// 강아지 그림을 고양이 그림으로 바꾸기
+		$('#changeGrim').click(function(){
+			this.attr('src', 'images/cat.jpg');
+		});
+		//// ----- 4
+		// 속성 val 값을 얻거나 지정: val()
+		$('#tf').val('홍길동');
+		// 텍스트에어리어에 작성중 글자 출력
+		$('#ta').val('작성중......');
+		// 셀렉트태그 마산 선택
+		$('#sel').val('masan');
+		// 리스트 - 제주오와 독도 선ㄴ택
+		$('#sel_m').val(['seom1', 'seom3']);
+
+		// 남자/여자 라디오버튼을 화면으로 만드시고
+		//  jquery로 남자만 체크하기
+		// input[속성="값"]:eq(index) index번째 친구를 찾기
+		$('input[name="gender"]:eq(0)').attr('checked', 'true');
+
+		// 사용자의 입력값이나 선택값을 얻어서 이 부분에 출력
+		// <div id='result'></div>
+		// innerHTML (JS) -> text() / html() (JQuery)
+		/*$('#check').click(function (){
+			$('#result').html($('#tf').val() + "<br>" + $('#ta').val() + "<br>" +
+					$('#sel').val() + "<br>" + $('#sel_m').val());
+		});*/
+
+		let actor = $('#actor');
+		let tae = $('#tae');
+		let su = $('#su');
+		let bin = $('#bin');
+
+		actor.append(tae);
+		su.appendTo(actor);
+		actor.append('<div id="bo">박보검</div>');
+		let tag = $('<div/>');
+		tag.text('공유');
+		tag.attr('id', 'gong');
+		actor.append(tag);
+
+		//<!-- [ 과제 ] 동적 테이블 만들기  -->
+		// 확인 버튼 눌러졌을때
+		// 이름 주소 성별 메세지
+		// 홍길동
+
+		$('#check').click(function () {
+			let tr = $('<tr/>');
+			tr.append('<td>' + $('#tf').val() + '</td>');
+			tr.append('<td>' + $('#sel option:selected').text() + '</td>');
+			tr.append('<td>' + $('input[name="gender"]').val() + '</td>');
+			tr.append('<td>' + $('#ta').val() + '</td>');
+			$('#tbl').append(tr)
+		});
+
+		/*$('.data').click(function (){
+			alert($(this).text());
+		});*/
+
+		$('.data').each(function (){
+			$(this).click(function (){
+				alert($(this).text());
+			});
+		});
+
+		/*$('.data').click( function(){
+			let data = $(this).text();
+			alert(data)
+		});*/
+
+	});
+	</script>
+</head>
+<body>
+	<!--  1 -->
+	<ul>
+		<li class="man">김수현</li>
+		<li class="woman">김희애</li>
+		<li class="woman">송혜교</li>
+		<li class="man">하정우</li>
+		<li class="woman">김태희</li>
+	</ul>
+	<!-- 2 -->
+	<input type="text" class="inputText"/>
+	<input type="text" class="inputText"/>
+	<input type="text" class="inputText"/>
+	
+
+	<!-- 3 -->
+		<div id="divText">여기에 글씨를</div>
+		<div id="divHtml">여기에 그림을</div>
+		<div id="divEmpty">여기를 비움</div>
+		<p>
+		<img src="images/puppy.jpg" id='changeGrim'>
+		</p>
+		
+	<!-- 4 -->	
+		<p>
+		이름: <input id="tf" type="text" size="20" /> <br/>
+		메세지: <textarea id="ta" rows="3" cols="20"></textarea> <br/>
+		주소: <select id="sel">
+			<option value="seoul">서울</option>	<!-- option에 value 값 없어도 됨 -->
+			<option value="busan">부산</option>
+			<option value="masan">마산</option>
+			<option value="incheon">인천</option>
+		</select>
+		<select id="sel_m" multiple="multiple">
+			<option value="seom1">제주도</option>
+			<option value="seom2">울릉도</option>
+			<option value="seom3">독도</option>
+			<option value="seom4">거제도</option>
+		</select> <br/>
+		성별: <input type="radio" class="radio" value="male" name="gender">남자
+		<input type="radio" class="radio" value="female" name="gender">여자 <br/>
+		<input type='button' id='check' value='확인'/>
+		<input type='button' id='init' value='초기화'/> <!--  [과제] 클릭시 값 지정하려면  -->
+		<div id='result'></div>
+
+		</p>
+		
+	<!-- 5 -->
+		<div id="actor">배우</div>
+		<div id="tae">김태희</div>
+		<div id="su">김수현</div>
+		<div id="bin">현빈</div>
+		<!-- [ 과제 ] 동적 테이블 만들기  -->
+	<table id="tbl" border="1px solid black">
+
+		<tr>
+		<td> 이름 </td>
+		<td> 주소 </td>
+		<td> 성별 </td>
+		<td> 메세지 </td>
+		</tr>
+
+	</table>
+
+	<!-- 6 -->
+		<div class="data">이름</div>
+		<div class="data">직업</div>
+		<div class="data">나이</div>
+
+	
+</body>
+</html>

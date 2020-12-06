@@ -1,0 +1,22 @@
+/* css 파일 만들기 
+
+1. @charset 지정    */
+@charset "utf-8";
+
+        /* tag 선택자 (가중치 1) */
+        div {
+            color : rebeccapurple;
+        }
+        /* class 선택자 (가중치 10) */
+        .point10 {
+            color: aqua;
+            font-size: 50px;
+        }
+        /* id 선택자 (가중치 100) */
+        #point100 {
+            color: pink;
+            font-style: italic;
+        }
+        
+
+

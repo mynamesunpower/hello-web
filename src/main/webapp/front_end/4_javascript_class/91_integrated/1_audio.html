@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Audio</title>
+<style type="text/css">
+input{
+	width:100px;
+}
+</style>
+<script type="text/javascript">
+	let audio = new Audio("../../media/Tag Me.mp3");
+
+	audio.addEventListener("timeupdate", () => {
+		document.getElementById('current').value = audio.currentTime;
+	});
+
+	let togglePlay = () => {
+		if (audio.paused || audio.ended) {
+			audio.play();
+			document.getElementById('control').innerHTML = "일시정지";
+		}
+		else {
+			audio.pause();
+			document.getElementById('control').innerHTML = "재생";
+		}
+	}
+
+	let toggleMute = () => {
+		audio.muted = !audio.muted;
+	}
+
+</script>
+
+</head>
+<body>
+<div id="player">
+	<img src="../../images/sample/sensitive.jpg" id="img"/><br/>
+	<button id="control" onclick="togglePlay()">재생</button>
+	<input type="number" id="current">
+	<button id="mute" onclick="toggleMute()">mute</button>
+</div>
+</body>
+</html>

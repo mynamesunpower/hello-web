@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> 파라메터 인자</title>
+	<script>
+// 1. 기본형 인자 (call by value)
+let pri = 10;
+function priParam (pri) {
+	pri--;
+	return pri;
+}
+document.write("1>" + priParam(pri) + "<br/>");
+document.write("2>" + pri + "<br/>");
+
+// 2. 참조형 인자 (call by reference)
+let ref = [1,2,3,4,5];
+function refParam (ref) {
+	ref.pop();
+	return ref;
+}
+document.write("3>" + refParam(ref) + "<br/>");
+document.write("4>" + ref + "<br/>");
+
+	</script>
+</head>
+
+<body>
+
+  
+ </body>
+</html>

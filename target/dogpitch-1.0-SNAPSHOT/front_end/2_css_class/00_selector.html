@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 연습</title>
+    <link type="text/css" rel="stylesheet" href="css/temp.css"/>
+    
+    <style>
+        /* 메인.css 내비두고 가중치로 조절 */
+        div#point100 {
+            color: aquamarine;
+        }
+        
+        body div#point100 {
+            color: brown;
+        }
+        
+        div#point100.point10 {
+            color: bisque;
+        }
+        
+        body div#point100.point10 {
+            color: aliceblue;
+        }
+        
+        html body div#point100.point10 {
+            color: blueviolet;
+        }
+
+        /* 속성을 찾기 */
+        input[type=text]{
+            border: 2px solid coral;
+            color: darkmagenta;
+        }
+        
+        /* 가상 속성 first-of-type 첫 번째 요소만 */
+        input:first-of-type {
+            border: 2px dashed blue;
+        }
+        /* 마지막 요소 */
+        input:last-of-type {
+            border: 2px solid magenta;
+        }
+        /* 5번째 요소 */
+        input:nth-of-type(5) {
+            border: 3px solid red;
+        }
+        /* 뒤에서 요소 찾기*/
+        input:nth-last-of-type(2){
+            border: 2px dashed azure;
+        }
+        /* 비활성화된 친구 */
+        input:disabled {
+            border: 5px solid cyan;
+        }
+        
+        input[type=button]:hover {
+            background-color: darkcyan;
+        }
+        
+        label[id=h1] {
+            color: aqua
+        }
+        
+        label:nth-of-type(2n+1) {
+            color: chocolate;
+        }
+        
+        label:nth-of-type(2n) {
+            color: darkolivegreen;
+        }
+        
+        label:nth-of-type(3n) {
+            font-size: 20px;
+        }
+        
+        label:nth-of-type(4n):active {
+            font-style: italic;
+        }
+        
+        .container > div{
+            margin-top: 20px;
+            width: 100px;
+            height: 100px;
+            float: left;
+            background-color: darkgreen;
+        }
+        
+        .container > div:nth-child(2n+1){
+            background-color: cornflowerblue;
+        }
+        
+    </style>
+</head>
+<body>
+	
+	<div id="point100" class="point10">안녕하세요</div>
+	
+	
+	<p>
+		<input type="text" value="입력1">
+		<input type="checkbox"> 선택
+		<input type="radio" name="rd"  checked="checked"> 예
+		<input type="radio" name="rd"> 아니오
+		<input type="text" value="입력2" disabled="disabled">		
+		<input type="button" value="확인">
+		<input type="button" value="취소">
+	</p>
+    
+    <p>
+        <label id = "h1">낄낄</label><br/>
+        <label id = "h2">낄낄2</label><br/>
+        <label id = "h3">낄낄3</label><br/>
+        <label id = "h4">낄낄4</label><br/>
+        <label id = "h5">낄낄5</label><br/>
+        <label id = "h6">낄낄6</label><br/>
+        <label id = "h7">낄낄7</label><br/>
+    </p>
+    
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+	
+	
+</body>
+</html>

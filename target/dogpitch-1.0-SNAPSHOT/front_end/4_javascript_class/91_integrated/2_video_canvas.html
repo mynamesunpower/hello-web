@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Video</title>
+<style type="text/css">
+canvas{
+		border: 1px solid #000;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function () {
+		let video = document.querySelector('#video');
+		let canvas = document.querySelector('#canvas');
+
+		canvas.addEventListener('click', () => {
+			let ctx = canvas.getContext('2d');
+			ctx.drawImage(video, 0, 0, 320, 240);
+		});
+	}
+
+</script>
+</head>
+<body>
+<video width="320" height="240" controls="controls"  id="video">
+	<source src="../../media/videoplayback.mp4" type="video/mp4"></source>
+</video>
+
+<canvas id="canvas" width="320" height="240"></canvas>
+</body>
+</html>

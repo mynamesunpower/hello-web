@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>우리마트</title>
+<link href="css/shop.css" rel="stylesheet" type="text/css"/>
+<script type=text/javascript>
+window.onload = function () {
+    alert("");
+    const fruit = [{"바나나", "아보카도", "사과"}, 
+                   {1, 0.5, 1}, 
+                   {2000, 2500, 3000}];
+    const vegetable = [{"당근", "양파", "고추", "가지", "도마토", "양상추"}, 
+                       {1, 1, 1, 1, 1, 1}, 
+                       {500, 700, 1000, 1200, 9500, 10000}];
+    
+    let list = document.getElementsByClassName('shoplist');
+    for(let what of list){
+        what.onclick = function () {
+            let good = what.id;
+            alert(good);
+            let table = document.querySelector('#table');
+            table.innerHTML = "";
+        }
+    }
+    
+    
+    
+}
+        
+</script>
+</head>
+<body>
+    <div id="body">
+        <div class="top_side">
+            <header class="header">
+                <span class="btn_back" href="#"></span>
+                <span class="shopname">우리마트</span>
+                <span class="btn_search" href="#"></span>
+            </header>
+            <div id="top_middle_side">
+                <div class="top_middle_text">판매 상품 목록</div>
+                <nav class="navigation" id="navigation">
+                    <ul class="list">
+                        <li class="shoplist" id="fruit">과일</li>
+                        <li class="shoplist" id="vegetable">야채</li>
+                        <li class="shoplist" id="iced">냉동식품</li>
+                        <li class="shoplist" id="fish">수산물</li>
+                        <li class="shoplist" id="meat">정육</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    
+        <div class="contents" id="contents">
+            <table id="table" class="table">
+            <tr>
+                <td>
+                    <div name="good" class="good">
+                            <img class="img_good" src="imgs/fruit_0.png"/>
+                        <div class="info_good" name="info_good">
+                            <div class="info_title" name="info_title">바나나</div>
+                            <div class="info_weight" name="info_weight">1kg</div>
+                            <div class="info_price" name="info_price">\2,500</div>
+                        </div>
+                        <div class="area_button" name="area_button">
+                            <input class="button_plus" type="button" name="plus">
+                            <input class="button_minus" type="button" name="minus">
+                        </div>  
+                    </div>
+                </td>
+                <td>
+                    <div name="good" class="good">
+                            <img class="img_good"/>
+                        <div class="info_good" name="info_good">
+                            <div class="info_title" name="info_title">바나나</div>
+                            <div class="info_weight" name="info_weight">1kg</div>
+                            <div class="info_price" name="info_price">\2,500</div>
+                        </div>
+                        <div class="area_button" name="area_button">
+                            <input class="button_plus" type="button" name="plus">
+                            <input class="button_minus" type="button" name="minus">
+                        </div>  
+                    </div>
+                </td>
+            </tr>
+                
+        
+        
+            </table>
+        </div>
+    </div>
+</body>    
+</html>
