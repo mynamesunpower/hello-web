@@ -19,7 +19,8 @@
 	// 총 페이지 개수 구하기
 	int totalPageCount = ListArticleService.getInstance().getTotalCount();
 
-	// Service에 getArticleList()함수를 호출하여 전체 메세지 레코드 검색
+	// Service에 getArticleList()함수를 호출하여 전체 메세지 레코드 검색 (x)
+	// getArticleList(pageNo) 선택한 페이지에 나올 메세지 레코드 검색 (o)
  	List <BoardVO> mList =  ListArticleService.getInstance().getArticleList(pageNo);
 %>
 

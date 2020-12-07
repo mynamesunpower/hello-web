@@ -50,8 +50,8 @@ public class ListMessageService {
 	public List<Message> getMessageList(int pageNo) throws MessageException {
 		// 해당 페이지 레코드를 검색해 온다면
 		/** 페이지번호 시작레코드번호 끝레코드번호 (페이지당 3개 보여준다면)
-		 *      1       1           3
-		 *      2       4           6
+		 *      1       1           3         1, 4, 7, 10, ... 1+3(n-1)
+		 *      2       4           6         3, 6, 9, 12, ... 3n
 		 *      3       7           9
 		 *      4       10          12
 		 */

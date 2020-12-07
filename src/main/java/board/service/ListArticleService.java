@@ -35,15 +35,19 @@ public class ListArticleService {
 		 *      3       21	        30
 		 *      4       31          40
 		 */
-		int startRow = 1 + 10 * (pageNo - 1); // 1, 11, 21, ... , 1 + 10(n-1)
+		int startRow = 1 + countPerPage * (pageNo - 1); // 1, 11, 21, ... , 1 + 10(n-1)
 		int endRow = pageNo * countPerPage; // 10, 20, 30, ... 10n
 		List<BoardVO> mList = BoardDao.getInstance().selectList(startRow, endRow);
 		return mList;
 	}
 
+	// 페이지의 총 개수 구하기
 	public int getTotalCount() throws BoardException {
+		// 총 레코드(글)의 개수 totalRecordCount
 		totalRecordCount = BoardDao.getInstance().getTotalCount();
+		// 총 페이지수 -> 총 개수 / 페이지당 개수 12 / 10 -> 1 => 그러나 2페이지까지 있어야함
 		totalPageCount = totalRecordCount / countPerPage;
+		//
 		if (totalRecordCount % countPerPage != 0) totalPageCount++;
 		return totalPageCount;
 	}
