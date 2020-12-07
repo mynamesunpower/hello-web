@@ -38,8 +38,8 @@
 		<td colspan="2">
 			<a href="BoardList.jsp">목록보기</a>
 			<a href="#">답변하기</a>
-			<a href="#">수정하기</a>
-			<a href="#">삭제하기</a>
+			<a href="BoardModifyForm.jsp?id=<%=id%>">수정하기</a>
+			<a href="BoardDeleteForm.jsp?id=<%=id%>">삭제하기</a>
 		</td>
 	</tr>
 	</table>

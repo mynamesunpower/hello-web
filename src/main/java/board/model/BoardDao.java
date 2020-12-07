@@ -137,7 +137,7 @@ public class BoardDao
 					"writer_name, title FROM article ORDER BY sequence_no DESC ";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			
+
 			while(rs.next()){
 				BoardVO vo = new BoardVO();
 				vo.setArticleId(rs.getInt("article_id"));
@@ -161,6 +161,45 @@ public class BoardDao
 			if( ps   != null ) { try{ ps.close();  } catch(SQLException ex){} }
 			if( con  != null ) { try{ con.close(); } catch(SQLException ex){} }
 		}		
+	}
+
+	public List<BoardVO> selectList(int startRow, int endRow) throws BoardException
+	{
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<BoardVO> mList = new ArrayList<BoardVO>();
+		boolean isEmpty = true;
+
+		try{
+			con = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+			String sql = "select * from article where article_id " +
+					"in (select article_id from (select rownum as rnum, article_id from (select article_id from article order by article_id desc))\n" +
+					" where rnum>= ? and rnum<= ?) order by article_id desc";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, startRow);
+			ps.setInt(2, endRow);
+
+			rs = ps.executeQuery();
+			while(rs.next()){
+				BoardVO vo = new BoardVO();
+				vo.setArticleId(rs.getInt("article_id"));
+				vo.setTitle(rs.getString("title"));
+				vo.setWriterName(rs.getString("writer_name"));
+				vo.setPostingDate(rs.getString("posting_date"));
+				vo.setReadCount(rs.getInt("read_count"));
+
+				mList.add(vo);
+				isEmpty = false;
+			}
+
+			return mList;
+		}catch( Exception ex ){
+			throw new BoardException("게시판 ) DB에 목록 검색시 오류  : " + ex.toString() );
+		} finally{
+			if( rs   != null ) { try{ rs.close();  } catch(SQLException ex){} }
+			if( ps   != null ) { try{ ps.close();  } catch(SQLException ex){} }
+			if( con  != null ) { try{ con.close(); } catch(SQLException ex){} }
+		}
 	}
 	
 	//--------------------------------------------
@@ -204,8 +243,12 @@ public class BoardDao
 
 		PreparedStatement ps = null;
 		try{
+			con = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+			String sql = "UPDATE article SET read_count = read_count + 1 WHERE article_id = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, article_id);
 
-
+			ps.executeUpdate();
 		
 		}catch( Exception ex ){
 			throw new BoardException("게시판 ) 게시글 볼 때 조회수 증가시 오류  : " + ex.toString() );	
@@ -222,10 +265,20 @@ public class BoardDao
 	{
 
 		PreparedStatement ps = null;
+
 		try{
+			con = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+			String sql = "UPDATE article SET title = ?, content = ?" +
+					" WHERE article_id = ? and password = ?";
+			ps = con.prepareStatement(sql);
+			/*System.out.println(rec.getTitle() + "\n" + rec.getContent() + "\n" +
+					rec.getArticleId() + "\n" + rec.getPassword());*/
+			ps.setString(1, rec.getTitle());
+			ps.setString(2, rec.getContent());
+			ps.setInt(3, rec.getArticleId());
+			ps.setString(4, rec.getPassword());
 
-
-			return 0; // 나중에 수정된 수를 리턴하시오.
+			return ps.executeUpdate(); // 나중에 수정된 수를 리턴하시오.
 		
 		}catch( Exception ex ){
 			throw new BoardException("게시판 ) 게시글 수정시 오류  : " + ex.toString() );	
@@ -245,9 +298,13 @@ public class BoardDao
 
 		PreparedStatement ps = null;
 		try{
+			con = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+			String sql = "DELETE FROM article WHERE article_id = ? and password = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, article_id);
+			ps.setString(2, password);
 
-
-			return 0; // 나중에 수정된 수를 리턴하시오.
+			return ps.executeUpdate(); // 나중에 수정된 수를 리턴하시오.
 		
 		}catch( Exception ex ){
 			throw new BoardException("게시판 ) 게시글 수정시 오류  : " + ex.toString() );	
@@ -257,7 +314,29 @@ public class BoardDao
 		}
 		
 	}
-	
+
+	public int getTotalCount() throws BoardException {
+		Statement st = null;
+		ResultSet rs = null;
+
+		try {
+			con = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+			String sql = "SELECT count(*) cnt FROM article";
+			st = con.createStatement();
+
+			rs = st.executeQuery(sql);
+			rs.next();
+			return rs.getInt("cnt");
+		}
+		catch (Exception e) {
+			throw new BoardException("게시판) 게시판의 레코드 총 개수 구하기 실패"+e.toString());
+		}
+		finally {
+			if (rs != null) { try { rs.close(); } catch (SQLException ex) {} }
+			if (st != null) { try { st.close(); } catch (SQLException ex) {} }
+			if (con != null) { try { con.close(); } catch (SQLException ex) {} }
+		}
+	}
 	
 	//----------------------------------------------------
 	//#####  부모레코드의 자식레코드 중 마지막 레코드의 순서번호를 검색

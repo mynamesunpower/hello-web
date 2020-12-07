@@ -11,10 +11,16 @@
 %>
 
 <%
+	// 페이지 넘버 가져오기
+	String pNum = request.getParameter("page");
+	int pageNo = 1;
+	if(pNum != null) pageNo = Integer.parseInt(pNum);
 
-// Service에 getArticleList()함수를 호출하여 전체 메세지 레코드 검색 
- List <BoardVO> mList =  ListArticleService.getInstance().getArticleList();
+	// 총 페이지 개수 구하기
+	int totalPageCount = ListArticleService.getInstance().getTotalCount();
 
+	// Service에 getArticleList()함수를 호출하여 전체 메세지 레코드 검색
+ 	List <BoardVO> mList =  ListArticleService.getInstance().getArticleList(pageNo);
 %>
 
 <!DOCTYPE html>
@@ -45,7 +51,7 @@
 		<% for (BoardVO vo : mList) {%>
 			<tr>
 				<td><%= vo.getArticleId() %></td>
-				<td><%= vo.getTitle()%></td>
+				<td><a href="BoardView.jsp?id=<%=vo.getArticleId()%>"><%= vo.getTitle()%></a></td>
 				<td><%= vo.getWriterName()%></td>
 				<td><%= vo.getPostingDate()%></td>
 				<td><%= vo.getReadCount()%></td>
@@ -57,6 +63,13 @@
 		<tr>
 			<td colspan="5">
 				<a href="BoardInputForm.jsp">글쓰기</a>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5">
+				<% for (int i = 1; i <= totalPageCount; i++) { %>
+				<a href="BoardList.jsp?page=<%=i%>"><%=i%></a>
+				<% } %>
 			</td>
 		</tr>
 	</table>
