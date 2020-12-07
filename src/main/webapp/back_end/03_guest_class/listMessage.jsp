@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="guest.model.*,guest.service.*" %>   
+<%@ page import="guest.model.*,guest.service.*" %>
 <%@ page import="java.util.List" %>
  
 <%
