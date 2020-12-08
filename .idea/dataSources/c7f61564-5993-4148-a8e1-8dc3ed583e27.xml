@@ -83,13 +83,13 @@
       <ObjectId>1</ObjectId>
       <CreatedTimestamp>2010-03-30.19:07:50</CreatedTimestamp>
       <ModifiedTimestamp>2020-11-30.23:08:53</ModifiedTimestamp>
-      <IntrospectionTimestamp>2020-12-03.19:43:52</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2020-12-08.18:31:02</IntrospectionTimestamp>
     </schema>
     <schema id="28" parent="1" name="SCOTT">
       <ObjectId>84</ObjectId>
       <CreatedTimestamp>2010-03-30.20:06:23</CreatedTimestamp>
-      <ModifiedTimestamp>2020-12-04.19:55:36</ModifiedTimestamp>
-      <IntrospectionTimestamp>2020-12-04.19:55:37</IntrospectionTimestamp>
+      <ModifiedTimestamp>2020-12-08.20:34:23</ModifiedTimestamp>
+      <IntrospectionTimestamp>2020-12-08.20:34:24</IntrospectionTimestamp>
       <Current>1</Current>
     </schema>
     <schema id="29" parent="1" name="SH">
@@ -34128,110 +34128,222 @@
       <TargetSchemaName>SYS</TargetSchemaName>
       <TargetObjectName>_USER_COMPARISON_ROW_DIF</TargetObjectName>
     </synonym>
-    <sequence id="4897" parent="28" name="SEQ_GUESTTB_MESSAGEID">
+    <sequence id="4897" parent="28" name="SEQ_ARTICLE_ID_ARTICLE">
+      <ObjectId>74895</ObjectId>
+      <CreatedTimestamp>2020-12-08.18:31:30</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-08.18:31:30</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="4898" parent="28" name="SEQ_GROUP_ID_ARTICLE">
+      <ObjectId>74896</ObjectId>
+      <CreatedTimestamp>2020-12-08.18:31:43</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-08.18:31:43</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="4899" parent="28" name="SEQ_GUESTTB_MESSAGEID">
       <ObjectId>74685</ObjectId>
       <CreatedTimestamp>2020-12-04.18:47:09</CreatedTimestamp>
       <ModifiedTimestamp>2020-12-04.18:47:09</ModifiedTimestamp>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <sequence id="4898" parent="28" name="SEQ_MESSAGEID">
+    <sequence id="4900" parent="28" name="SEQ_MESSAGEID">
       <ObjectId>74686</ObjectId>
       <CreatedTimestamp>2020-12-04.19:55:36</CreatedTimestamp>
       <ModifiedTimestamp>2020-12-04.19:55:36</ModifiedTimestamp>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <table id="4899" parent="28" name="AJAX_TEMP">
+    <table id="4901" parent="28" name="AJAX_TEMP">
       <ObjectId>74673</ObjectId>
       <CreatedTimestamp>2020-12-03.19:43:49</CreatedTimestamp>
       <ModifiedTimestamp>2020-12-03.19:43:49</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="4900" parent="28" name="BONUS">
+    <table id="4902" parent="28" name="ARTICLE">
+      <ObjectId>74893</ObjectId>
+      <CreatedTimestamp>2020-12-08.18:31:00</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-08.18:31:00</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="4903" parent="28" name="BONUS">
       <ObjectId>73198</ObjectId>
       <CreatedTimestamp>2010-03-30.20:06:23</CreatedTimestamp>
       <ModifiedTimestamp>2010-03-30.20:06:23</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="4901" parent="28" name="DEPT">
+    <table id="4904" parent="28" name="COMMENT_TAB">
+      <ObjectId>74897</ObjectId>
+      <CreatedTimestamp>2020-12-08.20:34:23</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-08.20:34:23</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="4905" parent="28" name="DEPT">
       <ObjectId>73194</ObjectId>
       <CreatedTimestamp>2010-03-30.20:06:23</CreatedTimestamp>
       <ModifiedTimestamp>2010-03-30.20:06:23</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="4902" parent="28" name="EMP">
+    <table id="4906" parent="28" name="EMP">
       <ObjectId>73196</ObjectId>
       <CreatedTimestamp>2010-03-30.20:06:23</CreatedTimestamp>
       <ModifiedTimestamp>2010-03-30.20:06:23</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="4903" parent="28" name="GUESTTB">
+    <table id="4907" parent="28" name="GUESTTB">
       <ObjectId>74683</ObjectId>
       <CreatedTimestamp>2020-12-04.18:44:55</CreatedTimestamp>
       <ModifiedTimestamp>2020-12-04.18:44:55</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="4904" parent="28" name="MEMBERTEST">
+    <table id="4908" parent="28" name="MEMBERTEST">
       <ObjectId>74674</ObjectId>
       <CreatedTimestamp>2020-12-04.00:00:26</CreatedTimestamp>
       <ModifiedTimestamp>2020-12-04.00:00:26</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="4905" parent="28" name="SALGRADE">
+    <table id="4909" parent="28" name="SALGRADE">
       <ObjectId>73199</ObjectId>
       <CreatedTimestamp>2010-03-30.20:06:23</CreatedTimestamp>
       <ModifiedTimestamp>2010-03-30.20:06:23</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <column id="4906" parent="4899" name="NAME">
+    <column id="4910" parent="4901" name="NAME">
       <Position>1</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4907" parent="4899" name="AGE">
+    <column id="4911" parent="4901" name="AGE">
       <Position>2</Position>
       <DataType>VARCHAR2(4 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4908" parent="4899" name="TEL">
+    <column id="4912" parent="4901" name="TEL">
       <Position>3</Position>
       <DataType>VARCHAR2(14 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4909" parent="4899" name="ADDR">
+    <column id="4913" parent="4901" name="ADDR">
       <Position>4</Position>
       <DataType>VARCHAR2(50 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4910" parent="4900" name="ENAME">
+    <column id="4914" parent="4902" name="ARTICLE_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="4915" parent="4902" name="GROUP_ID">
+      <Position>2</Position>
+      <DataType>NUMBER(*)|0s</DataType>
+    </column>
+    <column id="4916" parent="4902" name="SEQUENCE_NO">
+      <Position>3</Position>
+      <DataType>CHAR(16 byte)|0s</DataType>
+    </column>
+    <column id="4917" parent="4902" name="POSTING_DATE">
+      <Position>4</Position>
+      <DataType>DATE|0s</DataType>
+    </column>
+    <column id="4918" parent="4902" name="READ_COUNT">
+      <Position>5</Position>
+      <DataType>NUMBER(*)|0s</DataType>
+    </column>
+    <column id="4919" parent="4902" name="WRITER_NAME">
+      <Position>6</Position>
+      <DataType>VARCHAR2(20 byte)|0s</DataType>
+    </column>
+    <column id="4920" parent="4902" name="PASSWORD">
+      <Position>7</Position>
+      <DataType>VARCHAR2(20 byte)|0s</DataType>
+    </column>
+    <column id="4921" parent="4902" name="TITLE">
+      <Position>8</Position>
+      <DataType>VARCHAR2(100 byte)|0s</DataType>
+    </column>
+    <column id="4922" parent="4902" name="CONTENT">
+      <Position>9</Position>
+      <DataType>VARCHAR2(1024 byte)|0s</DataType>
+    </column>
+    <index id="4923" parent="4902" name="SYS_C0011197">
+      <ObjectId>74894</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2020-12-08.18:31:00</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-08.18:31:00</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ARTICLE_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="4924" parent="4902" name="SYS_C0011197">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2020-12-08.18:31:00</ModifiedTimestamp>
+      <ColNames>ARTICLE_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C0011197</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="4925" parent="4903" name="ENAME">
       <Position>1</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
     </column>
-    <column id="4911" parent="4900" name="JOB">
+    <column id="4926" parent="4903" name="JOB">
       <Position>2</Position>
       <DataType>VARCHAR2(9 byte)|0s</DataType>
     </column>
-    <column id="4912" parent="4900" name="SAL">
+    <column id="4927" parent="4903" name="SAL">
       <Position>3</Position>
       <DataType>NUMBER(*)|0s</DataType>
     </column>
-    <column id="4913" parent="4900" name="COMM">
+    <column id="4928" parent="4903" name="COMM">
       <Position>4</Position>
       <DataType>NUMBER(*)|0s</DataType>
     </column>
-    <column id="4914" parent="4901" name="DEPTNO">
+    <column id="4929" parent="4904" name="COMMENT_NO">
+      <Position>1</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="4930" parent="4904" name="USER_ID">
+      <Position>2</Position>
+      <DataType>VARCHAR2(30 byte)|0s</DataType>
+    </column>
+    <column id="4931" parent="4904" name="COMMENT_CONTENT">
+      <Position>3</Position>
+      <DataType>VARCHAR2(500 byte)|0s</DataType>
+    </column>
+    <column id="4932" parent="4904" name="REG_DATE">
+      <Position>4</Position>
+      <DataType>DATE|0s</DataType>
+    </column>
+    <index id="4933" parent="4904" name="SYS_C0011198">
+      <ObjectId>74898</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2020-12-08.20:34:23</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-08.20:34:23</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>COMMENT_NO</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="4934" parent="4904" name="SYS_C0011198">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2020-12-08.20:34:23</ModifiedTimestamp>
+      <ColNames>COMMENT_NO</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C0011198</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="4935" parent="4905" name="DEPTNO">
       <Position>1</Position>
       <DataType>NUMBER(2 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4915" parent="4901" name="DNAME">
+    <column id="4936" parent="4905" name="DNAME">
       <Position>2</Position>
       <DataType>VARCHAR2(14 byte)|0s</DataType>
     </column>
-    <column id="4916" parent="4901" name="LOC">
+    <column id="4937" parent="4905" name="LOC">
       <Position>3</Position>
       <DataType>VARCHAR2(13 byte)|0s</DataType>
     </column>
-    <index id="4917" parent="4901" name="PK_DEPT">
+    <index id="4938" parent="4905" name="PK_DEPT">
       <ObjectId>73195</ObjectId>
       <CreatedTimestamp>2010-03-30.20:06:23</CreatedTimestamp>
       <ModifiedTimestamp>2010-03-30.20:06:23</ModifiedTimestamp>
@@ -34239,47 +34351,47 @@
       <ColNames>DEPTNO</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4918" parent="4901" name="PK_DEPT">
+    <key id="4939" parent="4905" name="PK_DEPT">
       <ModifiedTimestamp>2010-03-30.20:06:23</ModifiedTimestamp>
       <ColNames>DEPTNO</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>PK_DEPT</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="4919" parent="4902" name="EMPNO">
+    <column id="4940" parent="4906" name="EMPNO">
       <Position>1</Position>
       <DataType>NUMBER(4 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4920" parent="4902" name="ENAME">
+    <column id="4941" parent="4906" name="ENAME">
       <Position>2</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
     </column>
-    <column id="4921" parent="4902" name="JOB">
+    <column id="4942" parent="4906" name="JOB">
       <Position>3</Position>
       <DataType>VARCHAR2(9 byte)|0s</DataType>
     </column>
-    <column id="4922" parent="4902" name="MGR">
+    <column id="4943" parent="4906" name="MGR">
       <Position>4</Position>
       <DataType>NUMBER(4 digit)|0s</DataType>
     </column>
-    <column id="4923" parent="4902" name="HIREDATE">
+    <column id="4944" parent="4906" name="HIREDATE">
       <Position>5</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <column id="4924" parent="4902" name="SAL">
+    <column id="4945" parent="4906" name="SAL">
       <Position>6</Position>
       <DataType>NUMBER(7,2 digit)|0s</DataType>
     </column>
-    <column id="4925" parent="4902" name="COMM">
+    <column id="4946" parent="4906" name="COMM">
       <Position>7</Position>
       <DataType>NUMBER(7,2 digit)|0s</DataType>
     </column>
-    <column id="4926" parent="4902" name="DEPTNO">
+    <column id="4947" parent="4906" name="DEPTNO">
       <Position>8</Position>
       <DataType>NUMBER(2 digit)|0s</DataType>
     </column>
-    <index id="4927" parent="4902" name="PK_EMP">
+    <index id="4948" parent="4906" name="PK_EMP">
       <ObjectId>73197</ObjectId>
       <CreatedTimestamp>2010-03-30.20:06:23</CreatedTimestamp>
       <ModifiedTimestamp>2010-03-30.20:06:23</ModifiedTimestamp>
@@ -34287,14 +34399,14 @@
       <ColNames>EMPNO</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4928" parent="4902" name="PK_EMP">
+    <key id="4949" parent="4906" name="PK_EMP">
       <ModifiedTimestamp>2010-03-30.20:06:23</ModifiedTimestamp>
       <ColNames>EMPNO</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>PK_EMP</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="4929" parent="4902" name="FK_DEPTNO">
+    <foreign-key id="4950" parent="4906" name="FK_DEPTNO">
       <ModifiedTimestamp>2010-03-30.20:06:23</ModifiedTimestamp>
       <ColNames>DEPTNO</ColNames>
       <RefSchemaName>SCOTT</RefSchemaName>
@@ -34302,27 +34414,27 @@
       <RefKeyName>PK_DEPT</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="4930" parent="4903" name="MESSAGE_ID">
+    <column id="4951" parent="4907" name="MESSAGE_ID">
       <Position>1</Position>
       <DataType>NUMBER(*)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4931" parent="4903" name="GUEST_NAME">
+    <column id="4952" parent="4907" name="GUEST_NAME">
       <Position>2</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4932" parent="4903" name="PASSWORD">
+    <column id="4953" parent="4907" name="PASSWORD">
       <Position>3</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4933" parent="4903" name="MESSAGE">
+    <column id="4954" parent="4907" name="MESSAGE">
       <Position>4</Position>
       <DataType>VARCHAR2(1024 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="4934" parent="4903" name="SYS_C0011121">
+    <index id="4955" parent="4907" name="SYS_C0011121">
       <ObjectId>74684</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2020-12-04.18:44:55</CreatedTimestamp>
@@ -34331,7 +34443,7 @@
       <ColNames>MESSAGE_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4935" parent="4903" name="SYS_C0011121">
+    <key id="4956" parent="4907" name="SYS_C0011121">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2020-12-04.18:44:55</ModifiedTimestamp>
       <ColNames>MESSAGE_ID</ColNames>
@@ -34339,30 +34451,30 @@
       <UnderlyingIndexName>SYS_C0011121</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="4936" parent="4904" name="ID">
+    <column id="4957" parent="4908" name="ID">
       <Position>1</Position>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4937" parent="4904" name="PASSWORD">
+    <column id="4958" parent="4908" name="PASSWORD">
       <Position>2</Position>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4938" parent="4904" name="NAME">
+    <column id="4959" parent="4908" name="NAME">
       <Position>3</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="4939" parent="4904" name="TEL">
+    <column id="4960" parent="4908" name="TEL">
       <Position>4</Position>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
     </column>
-    <column id="4940" parent="4904" name="ADDR">
+    <column id="4961" parent="4908" name="ADDR">
       <Position>5</Position>
       <DataType>VARCHAR2(400 byte)|0s</DataType>
     </column>
-    <index id="4941" parent="4904" name="SYS_C0011109">
+    <index id="4962" parent="4908" name="SYS_C0011109">
       <ObjectId>74675</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2020-12-04.00:00:26</CreatedTimestamp>
@@ -34371,7 +34483,7 @@
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="4942" parent="4904" name="SYS_C0011109">
+    <key id="4963" parent="4908" name="SYS_C0011109">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2020-12-04.00:00:26</ModifiedTimestamp>
       <ColNames>ID</ColNames>
@@ -34379,15 +34491,15 @@
       <UnderlyingIndexName>SYS_C0011109</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="4943" parent="4905" name="GRADE">
+    <column id="4964" parent="4909" name="GRADE">
       <Position>1</Position>
       <DataType>NUMBER(*)|0s</DataType>
     </column>
-    <column id="4944" parent="4905" name="LOSAL">
+    <column id="4965" parent="4909" name="LOSAL">
       <Position>2</Position>
       <DataType>NUMBER(*)|0s</DataType>
     </column>
-    <column id="4945" parent="4905" name="HISAL">
+    <column id="4966" parent="4909" name="HISAL">
       <Position>3</Position>
       <DataType>NUMBER(*)|0s</DataType>
     </column>

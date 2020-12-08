@@ -14,7 +14,7 @@ public class BoardDao
 	
 	// DB 연결시  관한 변수 
 	private static final String 	dbDriver	=	"oracle.jdbc.driver.OracleDriver";
-	private static final String		dbUrl		=	"jdbc:oracle:thin:@192.168.0.58:1521:orcl";
+	private static final String		dbUrl		=	"jdbc:oracle:thin:@localhost:1521:sunnydbs";
 	private static final String		dbUser		=	"scott";
 	private static final String		dbPass		=	"tiger";
 	
@@ -174,7 +174,7 @@ public class BoardDao
 			con = DriverManager.getConnection(dbUrl, dbUser, dbPass);
 			String sql = "select * from article where article_id " +
 					"in (select article_id from (select rownum as rnum, article_id from (select article_id from article order by article_id desc))\n" +
-					" where rnum>= ? and rnum<= ?) order by article_id desc";
+					" where rnum>= ? and rnum<= ?) order by sequence_no desc";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, startRow);
 			ps.setInt(2, endRow);
@@ -220,6 +220,11 @@ public class BoardDao
 
 			rs = ps.executeQuery();
 			if(rs.next()){
+				rec.setArticleId(rs.getInt("article_id"));
+				rec.setGroupId(rs.getInt("group_id"));
+				rec.setSequenceNo(rs.getString("sequence_no"));
+				rec.setReadCount(rs.getInt("read_count"));
+				rec.setPassword(rs.getString("password"));
 				rec.setTitle(rs.getString("title"));
 				rec.setWriterName(rs.getString("writer_name"));
 				rec.setPostingDate(rs.getString("posting_date"));

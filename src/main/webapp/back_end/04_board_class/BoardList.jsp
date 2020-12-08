@@ -52,7 +52,18 @@
 		<% for (BoardVO vo : mList) {%>
 			<tr>
 				<td><%= vo.getArticleId() %></td>
-				<td><a href="BoardView.jsp?id=<%=vo.getArticleId()%>"><%= vo.getTitle()%></a></td>
+				<td>
+					<% for(int i = 0; i<vo.getLevel(); i++){ %>
+					&nbsp;
+					<% } %>
+					<%--답글 이미지 표시--%>
+					<% if(vo.getLevel() != 0){ %>
+					<img alt="답글표시" src="imgs/board_re.gif">
+					<% } %>
+					<a href='BoardView.jsp?articleId=<%=vo.getArticleId()%>'>
+						<%=vo.getTitle()%>
+					</a>
+				</td>
 				<td><%= vo.getWriterName()%></td>
 				<td><%= vo.getPostingDate()%></td>
 				<td><%= vo.getReadCount()%></td>

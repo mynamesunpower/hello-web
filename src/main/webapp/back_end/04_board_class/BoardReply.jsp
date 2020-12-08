@@ -6,15 +6,15 @@
 	request.setCharacterEncoding("UTF-8");
 %>
 
-<jsp:useBean id="rec" class="board.model.BoardVO">
-	<jsp:setProperty name="rec" property="*"/>
+<jsp:useBean id="boardVO" class="board.model.BoardVO">
+	<jsp:setProperty name="boardVO" property="*"/>
 </jsp:useBean>
 
 <%
 	// 1. 부모게시물의 게시번호를 넘겨받기
-	
+	String parentId = request.getParameter("parentId");
 	// 2. Service에 reply() 호출하여 답변글 등록하기
-	BoardVO reRec = null;
+	BoardVO reRec = ReplyArticleService.getInstance().reply(parentId, boardVO);
 
 %>
     
@@ -25,7 +25,6 @@
 <title> 답변 글 저장하기 </title>
 </head>
 <body>
-
 답변글을 등록하였습니다. <br/><br/>
 
 <a href="BoardList.jsp"> 목록보기 </a> &nbsp;

@@ -1,11 +1,10 @@
 package board.service;
 
-import java.text.DecimalFormat;
-import java.util.Date;
-
 import board.model.BoardDao;
 import board.model.BoardException;
 import board.model.BoardVO;
+
+import java.text.DecimalFormat;
 
 
 public class ReplyArticleService {
@@ -26,7 +25,7 @@ public class ReplyArticleService {
 
 
 		BoardDao dao = BoardDao.getInstance();
-		// 부모게시글의 레코드를 얻어옴
+		// 부모게시글의 레코드를 얻어옴 (부모의 원본 글 정보)
 		BoardVO parent = dao.selectById(parentId);
 		
 		// 부모게시글을 체크
@@ -43,7 +42,7 @@ public class ReplyArticleService {
 		
 		rec.setGroupId(parent.getGroupId()); // 부모의 그룹번호와 동일하게 지정
 		rec.setSequenceNo(sequenceNumber);	 // 위에서 구한 답변글의 순서번호 지정
-		rec.setPostingDate( (new Date()).toString());	 // 등록일
+		//rec.setPostingDate( (new Date()).toString());	 // 등록일
 		
 		int articleId = dao.insert(rec);
 		rec.setArticleId(articleId);
