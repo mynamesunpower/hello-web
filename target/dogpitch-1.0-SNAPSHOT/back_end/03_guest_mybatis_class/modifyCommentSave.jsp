@@ -7,7 +7,9 @@
 </jsp:useBean>
 
 <!-- 서비스의 메소드 호출  -->
-<% CommentService.getInstance().modifyComment(comment); %>
+<% CommentService.getInstance().modifyComment(comment);
+    response.sendRedirect("viewComment");
+%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

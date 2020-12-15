@@ -24,7 +24,7 @@
 	<% for( Comment comment : mList ) { %>
 		<tr>
 			<td><%= comment.getCommentNo() %></td>
-			<td><a href="viewComment.jsp?cId=<%=comment.getCommentNo()%>"><%= comment.getUserId()%> 님이 쓴 글</a></td>
+			<td><a href="viewCommentAjax.jsp?cId=<%=comment.getCommentNo()%>"><%= comment.getUserId()%> 님이 쓴 글</a></td>
 			<td><%= comment.getRegDate()%></td>
 		</tr>
 	<% } %>
