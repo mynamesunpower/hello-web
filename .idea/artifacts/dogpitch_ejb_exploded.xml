@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-ejb" name="dogpitch:ejb exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/dogpitch_ejb_exploded</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="dogpitch/ejb/EJB" />
-      <element id="javaee-facet-classes" facet="dogpitch/ejb/EJB" />
-    </root>
-  </artifact>
-</component>
